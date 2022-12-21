@@ -18,26 +18,35 @@ class PomodoroPage extends StatelessWidget {
         children: [
           const Expanded(child: CronometroWidget()),
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 40),
-              child: Observer(
-                builder: (_) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    EntradaTempoWidgtet(
-                      title: 'Trabalho',
-                      value: store.tempoTrabalho,
-                      increment: store.incrementarTempoTrabalho,
-                      decrement: store.decrementarTempoTrabalho,
-                    ),
-                    EntradaTempoWidgtet(
-                      title: 'Descanso',
-                      value: store.tempoDescanso,
-                      increment: store.incrementarTempoDescanso,
-                      decrement: store.decrementarTempoDescanso,
-                    ),
-                  ],
-                ),
-              ))
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: Observer(
+              builder: (_) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  EntradaTempoWidgtet(
+                    title: 'Trabalho',
+                    value: store.tempoTrabalho,
+                    increment: store.iniciado && store.trabalhando()
+                        ? null
+                        : store.incrementarTempoTrabalho,
+                    decrement: store.iniciado && store.trabalhando()
+                        ? null
+                        : store.decrementarTempoTrabalho,
+                  ),
+                  EntradaTempoWidgtet(
+                    title: 'Descanso',
+                    value: store.tempoDescanso,
+                    increment: store.iniciado && store.descansando()
+                        ? null
+                        : store.incrementarTempoDescanso,
+                    decrement: store.iniciado && store.descansando()
+                        ? null
+                        : store.decrementarTempoDescanso,
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

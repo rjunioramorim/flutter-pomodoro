@@ -10,30 +10,30 @@ class CronometroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = Provider.of<PomodoroStore>(context);
-    return Container(
-      color: store.trabalhando() ? Colors.red : Colors.green,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            store.trabalhando() ? 'Hora de trabalhar' : 'Hora de descansar',
-            style: const TextStyle(
-              fontSize: 40,
-              color: Colors.white,
+    return Observer(builder: (_) {
+      return Container(
+        color: store.trabalhando() ? Colors.red : Colors.green,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              store.trabalhando() ? 'Hora de trabalhar' : 'Hora de descansar',
+              style: const TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Text(
-            "${store.minutos.toString().padLeft(2, '0')}: ${store.segundos.toString().padLeft(2, '0')}",
-            style: const TextStyle(
-              fontSize: 120,
-              color: Colors.white,
+            const SizedBox(height: 20),
+            Text(
+              "${store.minutos.toString().padLeft(2, '0')}: ${store.segundos.toString().padLeft(2, '0')}",
+              style: const TextStyle(
+                fontSize: 120,
+                color: Colors.white,
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Observer(
-            builder: (_) => Row(
+            const SizedBox(height: 20),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 if (!store.iniciado)
@@ -55,9 +55,9 @@ class CronometroWidget extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    });
   }
 }
