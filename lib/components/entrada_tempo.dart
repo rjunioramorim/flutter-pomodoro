@@ -1,5 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../store/pomodoro_store.dart';
 
 class EntradaTempoWidgtet extends StatelessWidget {
   final String title;
@@ -17,6 +20,7 @@ class EntradaTempoWidgtet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final store = Provider.of<PomodoroStore>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -32,7 +36,7 @@ class EntradaTempoWidgtet extends StatelessWidget {
               onPressed: decrement,
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
-                backgroundColor: Colors.red,
+                backgroundColor: store.trabalhando() ? Colors.red : Colors.green,
                 padding: const EdgeInsets.all(16),
               ),
               child: const Icon(
@@ -48,7 +52,7 @@ class EntradaTempoWidgtet extends StatelessWidget {
               onPressed: increment,
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),
-                backgroundColor: Colors.red,
+                backgroundColor: store.trabalhando() ? Colors.red : Colors.green,
                 padding: const EdgeInsets.all(16),
               ),
               child: const Icon(

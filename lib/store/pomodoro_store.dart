@@ -1,10 +1,12 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, constant_identifier_names
 
 import 'package:mobx/mobx.dart';
 
 part 'pomodoro_store.g.dart';
 
 class PomodoroStore = _PomodoroStore with _$PomodoroStore;
+
+enum TipoIntervalo { TRABALHO, DESCANSO }
 
 abstract class _PomodoroStore with Store {
   @observable
@@ -21,6 +23,9 @@ abstract class _PomodoroStore with Store {
 
   @observable
   int tempoDescanso = 1;
+
+  @observable
+  TipoIntervalo tipoIntervalo = TipoIntervalo.TRABALHO;
 
   @action
   void iniciar() {
@@ -55,5 +60,13 @@ abstract class _PomodoroStore with Store {
   @action
   void decrementarTempoDescanso() {
     tempoDescanso--;
+  }
+
+  bool trabalhando() {
+    return tipoIntervalo == TipoIntervalo.TRABALHO;
+  }
+
+  bool descansando() {
+    return tipoIntervalo == TipoIntervalo.DESCANSO;
   }
 }
