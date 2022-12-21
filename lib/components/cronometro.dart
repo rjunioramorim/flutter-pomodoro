@@ -30,7 +30,7 @@ class CronometroWidget extends StatelessWidget {
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
+            children: const [
               CronometroButtonWidget(label: 'Iniciar', icon: Icons.star),
               CronometroButtonWidget(label: 'Parar', icon: Icons.stop),
               CronometroButtonWidget(label: 'Reiniciar', icon: Icons.refresh),
