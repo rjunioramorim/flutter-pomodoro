@@ -24,8 +24,6 @@
 
 O sistema permitirá gerenciar tempo de trabalho e tempo de descanço com intervalos programadados.
 
-![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://user-images.githubusercontent.com/37356058/132422764-5a4e5300-7b04-4411-9126-387a445bc627.png)
-</p>
 
 ## Funcionalidades
 
