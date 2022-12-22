@@ -38,8 +38,8 @@ O sistema permitirá gerenciar tempo de trabalho e tempo de descanço com interv
 ## Aplicação
 
 <div align="center">
-<!-- 
-![Android Emulator](https://user-images.githubusercontent.com/37356058/135944390-ec96d4ec-ee43-4db9-882f-89be66aad23a.gif) -->
+
+![Android Emulator](https://github.com/rjunioramorim/flutter-pomodoro/blob/main/assets/video%20cortado.mp4)
 
   </div>
 
