@@ -40,7 +40,7 @@ O sistema permitirá gerenciar tempo de trabalho e tempo de descanço com interv
 <div align="center">
 
 <!-- ![Android Emulator](https://github.com/rjunioramorim/flutter-pomodoro/blob/main/assets/video-cortado.gif) -->
-![Android Emulator](<img src="/assets/app.gif" width="250" height="250"/>)
+![Android Emulator](<img src="https://github.com/rjunioramorim/flutter-pomodoro/blob/main/assets/app.gif" width="250" height="250"/>)
 
 
   </div>
